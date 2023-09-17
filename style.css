@@ -30,6 +30,16 @@
   #sidebar > div > h1 {
     font-size: 25px;
   }
+
+  .logo {
+    height: 50;
+    vertical-align: top;
+  }
+
+  .map {
+    height: 100%;
+    width: 100%;
+  }
   
   /* 
    * Optional: Makes the sample page fill the window. 
