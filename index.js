@@ -11,7 +11,7 @@ async function initMap() {
     zoom: 12,
     mapId: "MAPMAP"
   });
-  infoWindow = new google.maps.InfoWindow();
+  //infoWindow = new google.maps.InfoWindow();
 
   const locationButton = document.createElement("button");
 
@@ -37,12 +37,12 @@ async function initMap() {
           map.setCenter(pos);
         },
         () => {
-          handleLocationError(true, infoWindow, map.getCenter());
+          
         },
       );
     } else {
       // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
+      //handleLocationError(false, infoWindow, map.getCenter());
     }
   });
     var response = await fetch("https://discount-hub-api-ftp53nna7a-uc.a.run.app/nearby?loc=25.9107681%20-80.1418737&r=100000");
@@ -82,16 +82,6 @@ async function initMap() {
 
 });
 
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(
-    browserHasGeolocation
-      ? "Error: The Geolocation service failed."
-      : "Error: Your browser doesn't support geolocation.",
-  );
-  infoWindow.open(map);
 }
 
 window.initMap = initMap;
